@@ -11,6 +11,8 @@ import {
     TOGGLE_FAVORITE
 } from './actionTypes';
 
+import axios from '../axios';
+
 // Set Loading to true
 export const setLoading = () => {
     return {
@@ -22,8 +24,8 @@ export const setLoading = () => {
 export const getContacts = () => async dispatch => {
     try {
         setLoading();
-        const res = await fetch('/contacts');
-        const data = await res.json();
+        const res = await axios.get('/contacts/');
+        const { data } = res;
 
         dispatch({
             type: GET_CONTACTS,
@@ -42,12 +44,8 @@ export const addContacts = contact => async dispatch => {
     try {
         setLoading();
 
-        const res = await fetch('/contacts', {
-            method: 'POST',
-            body: JSON.stringify(contact),
-            headers: { 'Content-Type': 'application/json' }
-        });
-        const data = await res.json();
+        const res = await axios.post('/contacts', contact);
+        const { data } = res;
 
         dispatch({
             type: ADD_CONTACT,
@@ -65,9 +63,7 @@ export const addContacts = contact => async dispatch => {
 export const deleteContacts = id => async dispatch => {
     try {
         setLoading();
-        await fetch(`/contacts/${id}`, {
-            method: 'DELETE'
-        });
+        await axios.delete(`/contacts/${id}`);
 
         dispatch({
             type: DELETE_CONTACT,
@@ -97,11 +93,7 @@ export const clearCurrent = () => {
 export const updateContact = contact => async dispatch => {
     try {
         setLoading();
-        await fetch(`/contacts/${contact.id}`, {
-            method: 'PUT',
-            body: JSON.stringify(contact),
-            headers: { 'Content-Type': 'application/json' }
-        });
+        await axios.patch(`/contacts/${contact.id}`, contact);
 
         dispatch({
             type: UPDATE_CONTACT,
@@ -120,8 +112,8 @@ export const updateContact = contact => async dispatch => {
 export const searchContacts = text => async dispatch => {
     try {
         setLoading();
-        const res = await fetch(`/contacts?q=${text}`);
-        const data = await res.json();
+        const res = await axios.get(`/contacts?q=${text}`);
+        const { data } = res;
 
         dispatch({
             type: SEARCH_CONTACTS,

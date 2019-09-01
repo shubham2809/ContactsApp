@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import Materialize from 'materialize-css/dist/js/materialize.min';
 import { connect } from 'react-redux';
@@ -54,12 +53,11 @@ function AddContactModal({ addContacts }) {
                         <input
                             type="text"
                             name="name"
+                            id="name"
                             value={contact.name}
                             onChange={e => handleChange(e)}
+                            placeholder="Name"
                         />
-                        <label htmlFor="name" className="active">
-                            Name
-                        </label>
                     </div>
                 </div>
                 <div className="row">
@@ -72,10 +70,8 @@ function AddContactModal({ addContacts }) {
                             name="nickname"
                             value={contact.nickname}
                             onChange={e => handleChange(e)}
+                            placeholder="Nickname"
                         />
-                        <label htmlFor="nickname" className="active">
-                            Nickname
-                        </label>
                     </div>
                 </div>
                 <div className="row">
@@ -86,10 +82,8 @@ function AddContactModal({ addContacts }) {
                             name="email"
                             value={contact.email}
                             onChange={e => handleChange(e)}
+                            placeholder="Email"
                         />
-                        <label htmlFor="email" className="active">
-                            Email
-                        </label>
                     </div>
                 </div>
                 <div className="row">
@@ -100,10 +94,8 @@ function AddContactModal({ addContacts }) {
                             name="phone"
                             value={contact.phone}
                             onChange={e => handleChange(e)}
+                            placeholder="Phone"
                         />
-                        <label htmlFor="phone" className="active">
-                            Phone
-                        </label>
                     </div>
                 </div>
                 <div className="row">

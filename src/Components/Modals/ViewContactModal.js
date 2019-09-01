@@ -6,7 +6,7 @@ import Loader from '../layout/Loader';
 
 function ViewContactModal({ current }) {
     const modalStyle = {
-        width: '50%',
+        width: '70%',
         height: '70%'
     };
 

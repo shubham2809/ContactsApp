@@ -68,7 +68,7 @@ export default (state = initialState, action) => {
         case CLEAR_CURRENT: {
             return {
                 ...state,
-                contacts: null,
+                current: null,
                 loading: false
             };
         }
