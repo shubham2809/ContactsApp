@@ -22,7 +22,7 @@ You will also see any lint errors in the console.
 It uses a number of open source projects to work properly:
 
 * [React.js](https://reactjs.org/) - HTML enhanced for web apps!
-* [Redux](https://redux.js.org/) - HTML enhanced for web apps!
+* [Redux](https://redux.js.org/) - For State Management
 
 
 ### Project Structure
