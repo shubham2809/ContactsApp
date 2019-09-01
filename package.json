@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.19.0",
     "materialize-css": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -54,5 +53,5 @@
     "json-server": "^0.15.0",
     "prettier": "^1.18.2"
   },
-  "proxy": "https://my-json-server.typicode.com/shubham2809/ContactsApp"
+  "proxy": "http://localhost:5000"
 }
